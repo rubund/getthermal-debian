@@ -1,0 +1,30 @@
+git clone https://github.com/groupgets/GetThermal.git
+
+
+git submodule init
+git submodule update
+pushd libuvc
+mkdir build
+cd build
+cmake ..
+make
+popd
+
+sudo  apt install qt5-qmake
+sudo  apt install qtmultimedia5-dev
+sudo  apt install qtdeclarative5-dev
+
+mkdir build
+cd build
+/usr/lib/x86_64-linux-gnu/qt5/bin/qmake  ..
+make
+
+
+sudo apt install qml-module-qtquick-controls2
+sudo apt install qml-module-qtquick-layouts
+sudo apt install qml-module-qtquick2
+
+sudo apt install qml-module-qtmultimedia
+sudo apt install qml-module-qtquick-window2
+sudo apt install qml-module-qtquick-templates2
+sudo apt install qml-module-qtgraphicaleffects
