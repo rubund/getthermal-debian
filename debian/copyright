@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: GetThermal
+Source: https://github.com/groupgets/GetThermal
+
+Files: *
+Copyright: 
+License: MIT
+
+
+Files: debian/*
+Copyright: 2018 Ruben Undheim <ruben.undheim@gmail.com>
+License: MIT

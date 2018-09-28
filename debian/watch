@@ -1,0 +1,2 @@
+version=3
+https://github.com/groupgets/GetThermal/releases /groupgets/GetThermal/archive/(\d\S+)\.tar\.(?:bz2|gz|xz)

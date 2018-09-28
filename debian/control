@@ -1,0 +1,17 @@
+Source: getthermal
+Section: utils
+Priority: optional
+Maintainer: Ruben Undheim <ruben.undheim@gmail.com>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.2.1
+Vcs-Git: https://salsa.debian.org/rubund/getthermal.git
+Vcs-Browser: https://salsa.debian.org/rubund/getthermal
+Homepage: https://github.com/groupgets/GetThermal
+
+Package: getthermal
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: xxx
+ xxx
+ xx
