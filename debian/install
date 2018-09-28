@@ -1,1 +1,2 @@
 build/release/GetThermal usr/bin/
+debian/99-purethermal.rules lib/udev/rules.d/
