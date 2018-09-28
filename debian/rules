@@ -18,3 +18,8 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	dh_auto_build --builddirectory=build
+
+override_dh_clean:
+	dh_clean
+	$(RM) -r build
+	$(RM) -r libuvc/build
