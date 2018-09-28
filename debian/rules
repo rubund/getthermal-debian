@@ -10,6 +10,9 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@
 
 override_dh_auto_configure:
+	mkdir -p libuvc/build
+	cd libuvc/build && cmake ..
+	dh_auto_build --builddirectory=libuvc/build
 	mkdir -p build
 	dh_auto_configure --builddirectory=build -- ..
 
