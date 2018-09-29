@@ -1,0 +1,28 @@
+#!/bin/bash -e
+
+
+NEW_VERSION=$2
+PACKAGE_NAME=`dpkg-parsechangelog -SSource`
+
+FILENAME=../${PACKAGE_NAME}_${NEW_VERSION}.orig.tar.gz
+
+mkdir tmp
+pushd tmp
+
+tar -xf ../${FILENAME}
+SUBDIR=`ls`
+
+echo "Repacking with libuvc inside..."
+
+GITREPO=`cat ${SUBDIR}/.gitmodules | grep groupgets/libuvc | sed 's/^\s*url\s*=\s*//'`
+git clone --depth 1 $GITREPO libuvc
+rm -rf ${SUBDIR}/libuvc
+rm -rf libuvc/.git
+mv libuvc ${SUBDIR}/
+
+rm -f ../${FILENAME}
+tar -czf ../${FILENAME} ${SUBDIR}
+popd
+
+rm -rf tmp
+echo "Done"
