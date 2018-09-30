@@ -14,7 +14,8 @@ override_dh_auto_configure:
 	cd libuvc/build && cmake ..
 	dh_auto_build --builddirectory=libuvc/build
 	mkdir -p build
-	dh_auto_configure --builddirectory=build -- ..
+	cd build && /usr/lib/qt5/bin/qmake ..
+	#dh_auto_configure --builddirectory=build -- ..
 
 override_dh_auto_build:
 	dh_auto_build --builddirectory=build
