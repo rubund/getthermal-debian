@@ -3,6 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Ruben Undheim <ruben.undheim@gmail.com>
 Build-Depends: debhelper (>= 11),
+               cmake,
                qt5-qmake,
                qtmultimedia5-dev,
                qtdeclarative5-dev
