@@ -1,0 +1,39 @@
+From: Ruben Undheim <ruben.undheim@gmail.com>
+Date: Tue, 27 Nov 2018 20:02:32 +0000
+Subject: No EXPORT target in cmake
+
+---
+ libuvc/CMakeLists.txt | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/libuvc/CMakeLists.txt b/libuvc/CMakeLists.txt
+index c8227c6..a9114d4 100644
+--- a/libuvc/CMakeLists.txt
++++ b/libuvc/CMakeLists.txt
+@@ -78,15 +78,14 @@ target_link_libraries(uvc ${LIBUSB_LIBRARY_NAMES})
+ #  opencv_core)
+ 
+ install(TARGETS uvc
+-  EXPORT libuvcTargets
+   LIBRARY DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
+   ARCHIVE DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
+   PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_PREFIX}/include/libuvc"
+ )
+ 
+-export(TARGETS uvc
+-  FILE "${PROJECT_BINARY_DIR}/libuvcTargets.cmake")
+-export(PACKAGE libuvc)
++#export(TARGETS uvc
++#  FILE "${PROJECT_BINARY_DIR}/libuvcTargets.cmake")
++#export(PACKAGE libuvc)
+ 
+ set(CONF_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include")
+ set(CONF_LIBRARY "${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_SHARED_LIBRARY_PREFIX}uvc${CMAKE_SHARED_LIBRARY_SUFFIX}")
+@@ -100,5 +99,5 @@ install(FILES
+   "${PROJECT_BINARY_DIR}/libuvcConfigVersion.cmake"
+   DESTINATION "${INSTALL_CMAKE_DIR}")
+ 
+-install(EXPORT libuvcTargets
+-  DESTINATION "${INSTALL_CMAKE_DIR}")
++#install(EXPORT libuvcTargets
++#  DESTINATION "${INSTALL_CMAKE_DIR}")
