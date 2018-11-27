@@ -6,7 +6,8 @@ Build-Depends: debhelper (>= 11),
                cmake,
                qt5-qmake,
                qtmultimedia5-dev,
-               qtdeclarative5-dev
+               qtdeclarative5-dev,
+               libusb-1.0-0-dev
 Standards-Version: 4.2.1
 Vcs-Git: https://salsa.debian.org/rubund/getthermal.git
 Vcs-Browser: https://salsa.debian.org/rubund/getthermal
@@ -23,6 +24,10 @@ Depends: ${shlibs:Depends},
          qml-module-qtquick-window2,
          qml-module-qtquick-templates2,
          qml-module-qtgraphicaleffects
-Description: xxx
- xxx
- xx
+Description: Thermal camera viewer application for PureThermal and FLIR Lepton
+ When connecting a FLIR Lepton camera to a computer via USB and PureThermal,
+ by default it is not possible to read out the temperature readings. This is
+ what this application solves.
+ .
+ It supports Lepton sensors from FLIR using the USB interface board PureThermal
+ 1 and 2.
